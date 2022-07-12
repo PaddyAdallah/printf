@@ -1,61 +1,47 @@
-#ifndef _MAIN_H_
-#define _MAIN_H_
-
+#ifndef MAIN_H
+#define MAIN_H
 #include <stdarg.h>
-#include <unistd.h>
-#include <stdlib.h>
-
+#include <stdio.h>
 /**
- * struct print - struct for printer functions
- * @type_arg: identifier
- * @f: pointer to a printer functions
+ * struct vtype - struct vtype
+ * @tp: tp
+ * @f: function
  *
- * Description: struct that stores pointers to a
- * printer functions.
  */
-typedef struct print
+typedef struct vtype
 {
-	char *type_arg;
-	int (*f)(va_list, char *, unsigned int);
-} print_t;
-
+	char tp;
+	void (*f)();
+} vtype_t;
 int _printf(const char *format, ...);
-int print_prg(va_list __attribute__((unused)), char *, unsigned int);
-int print_chr(va_list arguments, char *buf, unsigned int ibuf);
-int print_str(va_list arguments, char *buf, unsigned int ibuf);
-int print_int(va_list arguments, char *buf, unsigned int ibuf);
-int print_bnr(va_list arguments, char *buf, unsigned int ibuf);
-int print_unt(va_list arguments, char *buf, unsigned int ibuf);
-int print_oct(va_list arguments, char *buf, unsigned int ibuf);
-int print_hex(va_list arguments, char *buf, unsigned int ibuf);
-int print_upx(va_list arguments, char *buf, unsigned int ibuf);
-int print_usr(va_list arguments, char *buf, unsigned int ibuf);
-int print_add(va_list arguments, char *buf, unsigned int ibuf);
-int print_rev(va_list arguments, char *buf, unsigned int ibuf);
-int print_rot(va_list arguments, char *buf, unsigned int ibuf);
-int prinlint(va_list arguments, char *buf, unsigned int ibuf);
-int prinlunt(va_list arguments, char *buf, unsigned int ibuf);
-int prinloct(va_list arguments, char *buf, unsigned int ibuf);
-int prinlhex(va_list arguments, char *buf, unsigned int ibuf);
-int prinlupx(va_list arguments, char *buf, unsigned int ibuf);
-int prinhint(va_list arguments, char *buf, unsigned int ibuf);
-int prinhunt(va_list arguments, char *buf, unsigned int ibuf);
-int prinhoct(va_list arguments, char *buf, unsigned int ibuf);
-int prinhhex(va_list arguments, char *buf, unsigned int ibuf);
-int prinhupx(va_list arguments, char *buf, unsigned int ibuf);
-int prinpint(va_list arguments, char *buf, unsigned int ibuf);
-int prinnoct(va_list arguments, char *buf, unsigned int ibuf);
-int prinnhex(va_list arguments, char *buf, unsigned int ibuf);
-int prinnupx(va_list arguments, char *buf, unsigned int ibuf);
-int prinsint(va_list arguments, char *buf, unsigned int ibuf);
-int (*get_print_func(const char *s, int index))(va_list, char *, unsigned int);
-int ev_print_func(const char *s, int index);
-unsigned int handl_buf(char *buf, char c, unsigned int ibuf);
-int print_buf(char *buf, unsigned int nbuf);
-char *fill_binary_array(char *binary, long int int_in, int isneg, int limit);
-char *fill_oct_array(char *bnr, char *oct);
-char *fill_long_oct_array(char *bnr, char *oct);
-char *fill_short_oct_array(char *bnr, char *oct);
-char *fill_hex_array(char *bnr, char *hex, int isupp, int limit);
-
-#endif
+void print_char(va_list valist);
+void print_int(va_list valist);
+void print_float(va_list valist);
+void print_string(va_list valist);
+void _write_buffer(char *buffer, int *index);
+int _strlen(char *s);
+char *_memcpy(char *dest, char *src, unsigned int n);
+void format_s(va_list valist, char *buffer, int *index);
+void format_c(va_list valist, char *buffer, int *index);
+void format_d(va_list valist, char *buffer, int *index);
+char *itos(char str[], long int num);
+char *utos(char str[], int num);
+int num_len(int num);
+int float_len(double f);
+void format_i(va_list valist, char *buffer, int *index);
+void format_u(va_list valist, char *buffer, int *index);
+void format_perc(va_list valist, char *buffer, int *index);
+void format_p(va_list valist, char *buffer, int *index);
+void format_lx(va_list valist, char *buffer, int *index);
+char *tostring(char str[], int num);
+int num_len(int num);
+void reset_buffer(char buffer[]);
+void *rot13(char *s);
+void rev_string(char *s);
+void format_h(va_list valist, char *buffer, int *index);
+void format_ch(va_list valist, char *buffer, int *index);
+void format_o(va_list valist, char *buffer, int *index);
+void format_b(va_list valist, char *buffer, int *index);
+void format_r(va_list valist, char *buffer, int *index);
+void format_R(va_list valist, char *buffer, int *index);
+#endif /* MAIN_H */
