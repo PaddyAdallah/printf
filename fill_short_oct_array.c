@@ -1,4 +1,5 @@
-#include "holberton.h"
+#include "main.h"
+
 /**
  * fill_short_oct_array - calculates a short octal number
  *

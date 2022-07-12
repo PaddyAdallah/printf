@@ -1,7 +1,7 @@
-#include "holberton.h"
+#include "main.h"
 #include <stdio.h>
 /**
- * print_chr - writes the character c to stdout
+ * print_chr - writes the character c to standard output
  * @arguments: input char
  * @buf: buffer pointer
  * @ibuf: index for buffer pointer

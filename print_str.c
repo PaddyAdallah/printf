@@ -1,7 +1,7 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * print_str - writes the string to stdout
+ * print_str - writes the string to standard output
  * @arguments: input string
  * @buf: buffer pointer
  * @ibuf: index for buffer pointer

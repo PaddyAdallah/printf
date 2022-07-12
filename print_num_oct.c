@@ -1,4 +1,5 @@
-#include "holberton.h"
+#include "main.h"
+
 /**
  * prinnoct - print the number in octal begining with zero
  * @arguments: input string

@@ -1,7 +1,7 @@
-#include "holberton.h"
+#include "main.h"
 /**
  * print_hex - prints a decimal in hexadecimal
- * @arguments: input string
+ * @arguments: the input string
  * @buf: buffer pointer
  * @ibuf: index for buffer pointer
  * Return: number of chars printed

@@ -1,7 +1,7 @@
-#include "holberton.h"
+#include "main.h"
 /**
  * prinlint - prints a long integer
- * @arguments: input string
+ * @arguments: the input string
  * @buf: buffer pointer
  * @ibuf: index for buffer pointer
  * Return: number of chars printed.
